@@ -16,8 +16,5 @@ jobs:
       - name: 'Build:dockerimage'
         uses: docker/build-push-action@v2
         with:
-          registry: ghcr.io
-          username: "r3d00"
-          password: ${{ secrets.PAT }}
-          repository: r3d00/keydb-redisjson
-          tags: latest
+          push: true
+          tags: r3d00/keydb-redisjson:latest
