@@ -30,6 +30,10 @@ WORKDIR ${REDIS_JSON_DIR}
 RUN cargo build --release
 
 FROM debian:bullseye-slim as target
+LABEL org.opencontainers.image.source https://github.com/r3d00/keydb-redisjson
+LABEL version 6.2.0
+LABEL maintainer Marc Singer <ms@red0.pro>
+
 ENV GOSU_VERSION 1.10
 # Add user and groups
 RUN groupadd -r keydb && useradd -r -g keydb keydb
