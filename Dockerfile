@@ -1,12 +1,14 @@
 # Build settings
+ARG KEYDB_BRANCH=RELEASE_6
 ARG KEYDB_DIR=/tmp/keydb
+ARG KEYDB_GIT=https://github.com/EQ-Alpha/KeyDB.git
 ARG REDIS_JSON_GIT=https://github.com/RedisJSON/RedisJSON.git
 ARG REDIS_JSON_DIR=/tmp/redisjson
 
 FROM debian:bullseye-slim as keydb
 ARG KEYDB_DIR
-ARG KEYDB_GIT=https://github.com/EQ-Alpha/KeyDB.git
-ARG KEYDB_BRANCH=RELEASE_6
+ARG KEYDB_GIT
+ARG KEYDB_BRANCH
 RUN \
     buildDeps=" \
     ca-certificates git build-essential nasm autotools-dev autoconf libjemalloc-dev tcl tcl-dev uuid-dev libcurl4-openssl-dev libssl-dev"; \
