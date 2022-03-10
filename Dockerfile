@@ -31,7 +31,7 @@ RUN cargo build --release
 
 FROM debian:bullseye-slim as target
 LABEL org.opencontainers.image.source https://github.com/r3d00/keydb-redisjson
-LABEL version 6.2.0
+LABEL version 6.2.2
 LABEL maintainer Marc Singer <ms@red0.pro>
 
 ENV GOSU_VERSION 1.10
