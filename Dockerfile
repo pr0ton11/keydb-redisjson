@@ -1,7 +1,7 @@
 # Build settings
 ARG KEYDB_BRANCH=RELEASE_6
 ARG KEYDB_DIR=/tmp/keydb
-ARG KEYDB_GIT=https://github.com/EQ-Alpha/KeyDB.git
+ARG KEYDB_GIT=https://github.com/Snapchat/KeyDB.git
 ARG REDIS_JSON_GIT=https://github.com/RedisJSON/RedisJSON.git
 ARG REDIS_JSON_DIR=/tmp/redisjson
 
@@ -30,9 +30,7 @@ WORKDIR ${REDIS_JSON_DIR}
 RUN cargo build --release
 
 FROM debian:bullseye-slim as target
-LABEL org.opencontainers.image.source https://github.com/r3d00/keydb-redisjson
-LABEL version 6.2.2
-LABEL maintainer Marc Singer <ms@red0.pro>
+LABEL maintainer "Marc Singer <ms@pr0.tech>"
 
 ENV GOSU_VERSION 1.10
 # Add user and groups
